@@ -15,7 +15,39 @@ apiRouter.get('/', function(req, res){
 });
 
 apiRouter.get('/makes', function(req, res){
-  res.json({message: 'Makes of Cars Route'})
+  res.json({"makes": [
+    {
+  "id": "1",
+  "name": "Ford",
+  "models": [{
+    "id": "3",
+    "name": "explorer",
+    "img": "img/explorer.jpg",
+    "description": "This is a Ford Explorer"
+  }, {
+    "id": "4",
+    "name": "escape",
+    "img": "img/escape.jpg",
+    "description": "This is a Ford Escape"
+  }]
+
+}, {
+  "id": "2",
+  "name": "Acura",
+  "models": [{
+    "id": "5",
+    "name": "MDX",
+    "img": "img/mdx.jpg",
+    "description": "This is an Acura MDX"
+  }, {
+    "id": "6",
+    "name": "ILX",
+    "img": "img/ilx.jpg",
+    "description": "This is an Acura ILX"
+  }
+]}
+
+]})
 });
 
 apiRouter.get('/models', function(req, res){
