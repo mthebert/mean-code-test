@@ -1,7 +1,7 @@
 angular.module('carApp', [])
   .controller('mainController', function($http) {
     var vm = this;
-    vm.message = 'Controller Message!';
+    vm.message = 'Pick a Car Make and Model Above';
 
     $http.get('/api/makes')
       .then(function(data) {
@@ -23,7 +23,8 @@ angular.module('carApp', [])
     return {
       restrict: 'E',
       scope: {
-        customerInfo: '=info'
+        models: '=',
+        makes: "="
       },
       templateUrl: 'app/views/pages/dropdown.html'
     };

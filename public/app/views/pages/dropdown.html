@@ -1,18 +1,16 @@
-<ul class="nav navbar-nav">
+<ul class="nav navbar-nav" ng-show="makes">
   <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cars <span class="caret"></span></a>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Makes <span class="caret"></span></a>
     <ul class="dropdown-menu">
-      <li><a href="#">Ford</a></li>
-      <li><a href="#">Acura</a></li>
+      <li ng-repeat="make in makes"><a href="#">{{make.name}}</a></li>
     </ul>
   </li>
 </ul>
-<ul class="nav navbar-nav">
+<ul class="nav navbar-nav" ng-show="models">
   <li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Models <span class="caret"></span></a>
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Model <span class="caret"></span></a>
     <ul class="dropdown-menu">
-      <li><a href="#">Explorer</a></li>
-      <li><a href="#">Expedition</a></li>
+      <li ng-repeat="model in models"><a href="#">{{model.name}}</a></li>
     </ul>
   </li>
 </ul>
