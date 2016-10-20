@@ -22,7 +22,14 @@ angular.module('mainCtrl',[])
     },
     templateUrl: 'app/views/pages/dropdown.html',
     link: function(scope) {
+      scope.selectedMake = null;
+      scope.selectedModel = null;
       scope.selectMake = function(id) {
+        scope.selectedMake = id;
+        console.log("selected " + id);
+      }
+      scope.selectModel = function(id) {
+        scope.selectedModel = id;
         console.log("selected " + id)
       }
       $http.get('/api/models')
