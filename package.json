@@ -1,0 +1,19 @@
+{
+  "name": "mean-code-test",
+  "version": "1.0.0",
+  "description": "code test using the mean stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mthebert/mean-code-test.git"
+  },
+  "author": "matt@thebert.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mthebert/mean-code-test/issues"
+  },
+  "homepage": "https://github.com/mthebert/mean-code-test#readme"
+}
