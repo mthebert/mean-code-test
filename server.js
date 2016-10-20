@@ -21,9 +21,9 @@ apiRouter.get('/makes', function(req, res){
   "name": "Ford",
   "models": [{
     "id": "3",
-    "name": "explorer",
-    "img": "img/explorer.jpg",
-    "description": "This is a Ford Explorer"
+    "name": "edge",
+    "img": "img/edge.jpg",
+    "description": "This is a Ford Edge"
   }, {
     "id": "4",
     "name": "escape",
@@ -51,12 +51,31 @@ apiRouter.get('/makes', function(req, res){
 });
 
 apiRouter.get('/models', function(req, res){
-  res.json({message: 'Models of Cars Route'});
-});
+  res.json({"models": [
+    {
+      "id": "3",
+    "name": "edge",
+    "img": "img/edge.jpg",
+    "description": "This is a Ford Edge"
+  }, {
+    "id": "4",
+    "name": "escape",
+    "img": "img/escape.jpg",
+    "description": "This is a Ford Escape"
+  }]
+
+
+  })
+  });
 
 apiRouter.route('/models/:model_id')
   .get(function(req, res){
-    res.json({message: 'Find a Model'});
+    res.json({
+      "id": "3",
+      "name": "edge",
+      "img": "img/edge.jpg",
+      "description": "This is a Ford Edge"
+    })
   })
 
 // ANGULAR ROUTES
