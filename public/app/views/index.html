@@ -10,17 +10,18 @@
 	<script type="text/javascript" src="assets/js/jquery.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/angular.min.js"></script>
+	<script type="text/javascript" src="app/controllers/mainController.js"></script>
 	<script src="app/app.js"></script>
 </head>
 <body class="container" ng-app="carApp" ng-controller="mainController as main">
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<dropdown makes="main.makes" models="main.models"></dropdown>
+				<dropdown makes="main.makes" makeid="{{makeid}}" makeCall="getMakeId()" models="main.models"></dropdown>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
-	<div class="jumbotron">
+	<div class="jumbotron parent">
 		<div ng-show="main.carmodel">
 			<h2>{{main.carmodel.description}}</h2>
 			<img ng-src="assets/{{main.carmodel.img}}" />
