@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/mthebert/mean-code-test#readme",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
   }
 }

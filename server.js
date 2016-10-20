@@ -1,10 +1,16 @@
 var express = require('express');
 var app = express();
+var morgan = require('morgan');
+var path = require('path');
+var config = require('./config');
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+app.use(morgan('dev'));
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('*', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-app.listen(3000, function () {
-  console.log('Express Server on port 3000!');
-});
+app.listen(config.port);
+console.log("Express Server started...");
