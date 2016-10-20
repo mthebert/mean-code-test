@@ -1,4 +1,4 @@
-:# CODE TEST
+# CODE TEST
 
 Here are the specifications for the code test:
 
