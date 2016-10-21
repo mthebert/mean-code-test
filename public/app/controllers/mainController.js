@@ -5,7 +5,8 @@ angular.module('mainCtrl',[])
 
   $http.get('/api/makes')
     .then(function(data) {
-      vm.makes = data.data.makes;
+      console.log(data)
+      vm.makes = data.data;
     });
 
   $http.get('/api/models/5')

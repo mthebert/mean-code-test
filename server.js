@@ -2,7 +2,10 @@ var express = require('express');
 var app = express();
 var morgan = require('morgan');
 var path = require('path');
+var mongoose = require('mongoose');
 
+var Car     = require('./models/car');
+mongoose.connect('mongodb://admin:hearst@ds021434.mlab.com:21434/hearst');
 app.use(morgan('dev'));
 
 // API
@@ -13,42 +16,14 @@ app.use('/api', apiRouter);
 apiRouter.get('/', function(req, res){
   res.json({message: 'Default API Route'});
 });
-
-apiRouter.get('/makes', function(req, res){
-  res.json({"makes": [
-    {
-  "id": "1",
-  "name": "Ford",
-  "models": [{
-    "id": "3",
-    "name": "edge",
-    "img": "img/edge.jpg",
-    "description": "This is a Ford Edge"
-  }, {
-    "id": "4",
-    "name": "escape",
-    "img": "img/escape.jpg",
-    "description": "This is a Ford Escape"
-  }]
-
-}, {
-  "id": "2",
-  "name": "Acura",
-  "models": [{
-    "id": "5",
-    "name": "MDX",
-    "img": "img/mdx.jpg",
-    "description": "This is an Acura MDX"
-  }, {
-    "id": "6",
-    "name": "ILX",
-    "img": "img/ilx.jpg",
-    "description": "This is an Acura ILX"
-  }
-]}
-
-]})
-});
+apiRouter.route('/makes')
+  .get(function(req, res) {
+    Car.find(function(err, makes) {
+      if (err) res.send(err);
+        console.log("Getting Makes!  " + makes);
+        res.json(makes);
+    });
+  });
 
 apiRouter.get('/models', function(req, res){
   res.json({"models": [
