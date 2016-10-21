@@ -8,11 +8,6 @@ angular.module('mainCtrl',[])
       console.log(data)
       vm.makes = data.data;
     });
-
-  $http.get('/api/models/5')
-    .then(function(data) {
-      // vm.carmodel = data.data;
-    });
 })
 
 .directive('dropdown', function($http) {
@@ -23,20 +18,17 @@ angular.module('mainCtrl',[])
     },
     templateUrl: 'app/views/pages/dropdown.html',
     link: function(scope) {
-      scope.selectedMake = null;
-      scope.selectedModel = null;
       scope.selectMake = function(id) {
-        scope.selectedMake = id;
-        console.log("selected " + id);
-      }
-      scope.selectModel = function(id) {
-        scope.selectedModel = id;
-        console.log("selected " + id)
-      }
-      $http.get('/api/models')
-        .then(function(data) {
-          scope.models = data.data.models;
+        scope.models = null;
+        var makeModels = _.find(scope.makes, function(make){
+          return id === make._id;
         });
+        scope.models = makeModels.models;
+      }
+
+      scope.selectModel = function(model) {
+        console.log("selected model" + model);
+      }
     }
   };
 })
