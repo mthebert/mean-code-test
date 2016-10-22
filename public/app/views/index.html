@@ -12,14 +12,14 @@
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<dropdown makes="main.makes" makeid="{{makeid}}" makeCall="getMakeId()" models="main.models"></dropdown>
+				<dropdown makes="main.makes" makeid="{{makeid}}" makeCall="getMakeId()" models="main.models" car="main.selectedCar"></dropdown>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
 	<div class="jumbotron parent">
-		<div ng-show="main.carmodel">
-			<h2>{{main.carmodel.description}}</h2>
-			<img ng-src="assets/{{main.carmodel.img}}" />
+		<div ng-show="main.selectedCar">
+			<h2>{{main.selectedCar.description}}</h2>
+			<img ng-src="assets/{{main.selectedCar.img}}" />
 		</div>
 		<div ng-show="!main.carmodel">
 			<h2>{{main.message}}</h2>
