@@ -16,3 +16,8 @@ Here are the specifications for the code test:
     * Page view will have a placeholder
         * depending on the model, text in the first placeholder based on specific model
         * Content should also display the corresponding image of the vehicle
+
+## To Run:
+* npm install
+* gulp sass
+* node start
